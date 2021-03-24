@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bateria Electronica</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/bateria.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bateria Electrica</h1>
+      <div class="row">
+        <div class="col-lg-6">
+          <button onclick="reproducirA()">
+            <img src="./img/tom1.png" alt="tom-1" />
+          </button>
+          <button onclick="reproducirS()">
+            <img src="./img/tom2.png" alt="tom-2" />
+          </button>
+          <button onclick="reproducirD()">
+            <img src="./img/tom3.png" alt="tom-3" />
+          </button>
+          <button onclick="reproducirF()">
+            <img src="./img/tom4.png" alt="tom-4" />
+          </button>
+        </div>
+        <div class="col-lg-6">
+          <button onclick="reproducirJ()">
+            <img src="./img/snare.png" alt="snare" />
+          </button>
+          <button onclick="reproducirK()">
+            <img src="./img/crash.png" alt="crash" />
+          </button>
+          <button onclick="reproducirL()">
+            <img src="./img/kick.png" alt="kick" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <button id="btnModal" onclick="abrirModal()">Abrir Modal</button>
+      <div id="modal" class="border border-primary">
+        <div class="bg-white">
+          <h1>Titulo del Modal</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
+            iure sint dolorem ab vel distinctio ullam saepe fugiat fugit
+            delectus! Ea, repellendus voluptate.
+          </p>
+          <div class="d-flex justify-content-end">
+            <button id="btnModalCancelar" class="btn-secondary m-2">
+              Cancelar
+            </button>
+            <button id="btnModalAceptar" class="btn-primary m-2">
+              Aceptar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/bateria.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla de Personas</title>
+    <link rel="stylesheet" href="./css/ejercicio21.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ejercicio 21 - Tabla de Personas</h1>
+      <div class="input-group mb-3">
+        <input
+          id="input"
+          type="text"
+          class="form-control"
+          placeholder="Ingrese texto a buscar..."
+          oninput="filtrarTabla(event)"
+        />
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+          </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+      </table>
+    </div>
+    <script src="./js/ejercicio21.js"></script>
+  </body>
+</html>
