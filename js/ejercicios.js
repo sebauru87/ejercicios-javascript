@@ -105,6 +105,7 @@ console.log(caminoOptimo(["NORTE", "OESTE", "SUR", "ESTE"]));
 
 //ejercicio 15
 const parentesisCorrectos = (str) => {
+  if (str.length % 2 === 1) return false;
   let regExp = /\(\)/g;
   let halfLength = str.length / 2;
 
@@ -159,18 +160,15 @@ const encriptar13 = (str, crypt = 13) => {
   for (let i = 0; i < str.length; i++) {
     if (alphabet.indexOf(str[i]) >= 0) {
       let index = alphabet.indexOf(str[i]);
-      if (index + crypt <= 26) {
-        strOutput += alphabet[index + crypt];
-      } else {
-        strOutput += alphabet[index + crypt - 26];
-      }
+      // if (index + crypt <= 26) {
+      //   strOutput += alphabet[index + crypt];
+      // } else {
+      //   strOutput += alphabet[index + crypt - 26]; //se puede usar (index+13)%26 me retorna el resto
+      // }
+      strOutput += alphabet[(index + crypt) % 26];
     } else if (alphabet.indexOf(str[i].toLowerCase()) >= 0) {
       let index = alphabet.indexOf(str[i].toLowerCase());
-      if (index + crypt <= 26) {
-        strOutput += alphabet[index + crypt].toUpperCase();
-      } else {
-        strOutput += alphabet[index + crypt - 26].toUpperCase();
-      }
+      strOutput += alphabet[(index + crypt) % 26].toUpperCase();
     } else {
       strOutput += str[i];
     }
@@ -291,3 +289,90 @@ console.log(duracionParaHumanos(43424234));
 console.log(duracionParaHumanos(4342440));
 
 //ejercicio 19
+
+//ejercicio 26
+// Crear una función en JavaScript llamada ​ sumarDigitos​ que reciba como
+// parámetro un número entero y retorne como resultado otro número entero que se
+// calcula sumando los dígitos del número recibido.
+// Si el resultado de la suma es un número de más de un dígito, se deberá repetir la
+// suma la cantidad de veces que sea necesaria hasta obtener un número de un sólo
+// dígito.
+const sumarDigitos = (num) => {
+  let numOutput = num;
+
+  if (num < 10) return num;
+
+  while (numOutput > 9) {
+    let numsSplit = [];
+    numsSplit = String(numOutput).split("");
+    numOutput = numsSplit.reduce((acc, numero) => acc + Number(numero), 0);
+  }
+
+  return numOutput;
+};
+
+console.log(sumarDigitos(0)); // 0
+console.log(sumarDigitos(4)); //4
+console.log(sumarDigitos(62)); // 8
+console.log(sumarDigitos(942)); // 6
+console.log(sumarDigitos(132189)); // 6
+console.log(sumarDigitos(493193)); // 2
+
+//ejercicio27
+const serieFibonacci = (num) => {
+  if (num === 0) return "tiene que ser entero positivo";
+  if (num === 1) return "0";
+  let arr = [];
+  for (let index = 0; index < num; index++) {
+    let largo = arr.length;
+    if (largo < 2) arr.push(index);
+    if (largo >= 2) {
+      arr.push(arr[largo - 1] + arr[largo - 2]);
+    }
+  }
+
+  return arr.join(", ");
+};
+
+console.log(serieFibonacci(1)); //"0"
+console.log(serieFibonacci(2)); //"0, 1"
+console.log(serieFibonacci(3)); //"0, 1, 1"
+console.log(serieFibonacci(4)); //"0, 1, 1, 2"
+console.log(serieFibonacci(5)); //"0, 1, 1, 2, 3"
+console.log(serieFibonacci(6)); //"0, 1, 1, 2, 3, 5"
+console.log(serieFibonacci(7)); //"0, 1, 1, 2, 3, 5, 8"
+console.log(serieFibonacci(8)); //"0, 1, 1, 2, 3, 5, 8, 13"
+
+//ejercicio28
+const numeroFibonacci = (num) => {
+  if (num === 0) return "tiene que ser entero positivo";
+  if (num === 1) return "0";
+  let arr = [];
+  for (let index = 0; index < num; index++) {
+    let largo = arr.length;
+    if (largo < 2) arr.push(index);
+    if (largo >= 2) {
+      arr.push(arr[largo - 1] + arr[largo - 2]);
+    }
+  }
+
+  return arr[arr.length - 1];
+};
+
+console.log(numeroFibonacci(7)); //"0, 1, 1, 2, 3, 5, 8, 13"
+console.log(numeroFibonacci(30)); //514229
+//console.log(numeroFibonacci(500));
+
+//ejercicio29
+// Crear una función en JavaScript llamada ​ sumarStrings​ que reciba como
+// parámetros dos ​ strings ​ (que representan dos números naturales) y retorna un nuevo
+// string ​ que representa la suma de los números.
+// La dificultad de este ejercicio está en poder sumar números realmente grandes y
+// poder mostrar la suma completa (con todos los dígitos). Ver detalles ​ aquí​ .
+
+const sumarStrings = (str1, str2) => {};
+
+sumarStrings("1", "6"); //"7"
+sumarStrings("0", "4"); //"4"
+sumarStrings("0034", "000056"); //"90"
+sumarStrings("73283718237137219313432", "8934342432"); //"73283718237146153655864"
