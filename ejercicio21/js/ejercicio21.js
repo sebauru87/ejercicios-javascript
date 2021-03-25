@@ -40,7 +40,7 @@ const mostrarTablaVacia = () => {
 };
 const input = document.getElementById("input");
 
-const filtrarTabla = (event) => {
+const filtrarTabla = () => {
   //console.log(input.value);
   mostrarUsuariosFiltrados(input.value);
 };

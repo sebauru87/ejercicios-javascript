@@ -214,11 +214,17 @@ const duracionParaHumanos = (segundos) => {
   let strOutput = "";
   let arrOutput = [];
 
-  let anios = Math.floor(segundos / 31536000);
-  let dias = Math.floor(segundos / 86400);
-  let horas = Math.floor(segundos / 3600);
-  let minutos = Math.floor((segundos - horas * 3600) / 60);
-  segundos = segundos - horas * 3600 - minutos * 60;
+  const oneSecond = 1;
+  const oneMinute = oneSecond * 60;
+  const oneHour = oneMinute * 60;
+  const oneDay = oneHour * 24;
+  const oneYear = oneDay * 365;
+
+  let anios = Math.floor(segundos / 31536000); // mejor  Math.floor  XXXXXsegundos / anio = XX anios
+  let dias = Math.floor(segundos / 86400); // mejor  Math.floor  XXXXXsegundos / dia  %  365 = XX dias
+  let horas = Math.floor(segundos / 3600); // mejor  Math.floor  XXXXXsegundos / hora  %  24 = XX horas
+  let minutos = Math.floor((segundos - horas * 3600) / 60); // mejor  Math.floor  XXXXXsegundos / minuto  %  60 = XX minutos
+  segundos = segundos - horas * 3600 - minutos * 60; // mejor  Math.floor  XXXXXsegundos %  60 = XX segundos
   if (horas > 23) {
     horas = Math.round((horas / 24 - Math.floor(horas / 24)) * 24);
   }
@@ -239,16 +245,6 @@ const duracionParaHumanos = (segundos) => {
 
   let strSegundos = `${segundos} segundo${checkSandCero(segundos)}`;
   if (segundos > 0) arrOutput.push(strSegundos);
-
-  // let n = arrOutput.length;
-  // if (n === 0) strOutput = `ahora`;
-  // if (n === 1) strOutput = `${arrOutput[0]}`;
-  // if (n === 2) strOutput = `${arrOutput[0]} y ${arrOutput[1]}`;
-  // if (n === 3) strOutput = `${arrOutput[0]}, ${arrOutput[1]} y ${arrOutput[2]}`;
-  // if (n === 4)
-  //   strOutput = `${arrOutput[0]}, ${arrOutput[1]}, ${arrOutput[2]} y ${arrOutput[3]}`;
-  // if (n === 5)
-  //   strOutput = `${arrOutput[0]}, ${arrOutput[1]}, ${arrOutput[2]}, ${arrOutput[3]} y ${arrOutput[4]}`;
 
   switch (arrOutput.length) {
     case 0:

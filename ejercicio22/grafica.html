@@ -11,12 +11,21 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <div class="container">
       <h1>Grafica del PBI de Uruguay</h1>
-      <canvas id="myChart" width="400" height="400"></canvas>
+      <canvas id="myChart"></canvas>
+      <div id="spinner">
+        Loading ... <i class="fas fa-spinner fa-pulse"></i>
+      </div>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
