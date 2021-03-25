@@ -18,6 +18,7 @@ const tabla = document.getElementById("tabla");
 
 const mostrarTodosUsuarios = (usuarios) => {
   if (usuarios.length > 0) {
+    document.getElementById("spinner").style.display = "none";
     usuarios.forEach((usuario) => {
       mostrarUnUsuario(usuario);
     });
@@ -35,7 +36,7 @@ const mostrarUnUsuario = (usuario) => {
 </tr>`;
 };
 const mostrarTablaVacia = () => {
-  tabla.innerHTML = `Error`;
+  tabla.innerHTML = `<tr><td class="error" colspan="4">Error. No existe Persona</td></tr>`;
 };
 const input = document.getElementById("input");
 

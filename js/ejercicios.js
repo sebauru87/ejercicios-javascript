@@ -358,9 +358,10 @@ const numeroFibonacci = (num) => {
 
   return arr[arr.length - 1];
 };
-
-console.log(numeroFibonacci(7)); //"0, 1, 1, 2, 3, 5, 8, 13"
-console.log(numeroFibonacci(30)); //514229
+console.log(numeroFibonacci(5));
+console.log(numeroFibonacci(6)); //5
+console.log(numeroFibonacci(7)); // 8
+console.log(numeroFibonacci(30)); // 514229
 //console.log(numeroFibonacci(500));
 
 //ejercicio29
@@ -370,9 +371,14 @@ console.log(numeroFibonacci(30)); //514229
 // La dificultad de este ejercicio está en poder sumar números realmente grandes y
 // poder mostrar la suma completa (con todos los dígitos). Ver detalles ​ aquí​ .
 
-const sumarStrings = (str1, str2) => {};
+const sumarStrings = (str1, str2) => {
+  let arr = [BigInt(str1), BigInt(str2)];
+  let suma = arr.reduce((acc, num) => acc + num, BigInt(0));
 
-sumarStrings("1", "6"); //"7"
-sumarStrings("0", "4"); //"4"
-sumarStrings("0034", "000056"); //"90"
-sumarStrings("73283718237137219313432", "8934342432"); //"73283718237146153655864"
+  return String(suma);
+};
+
+console.log(sumarStrings("1", "6")); //"7"
+console.log(sumarStrings("0", "4")); //"4"
+console.log(sumarStrings("0034", "000056")); //"90"
+console.log(sumarStrings("73283718237137219313432", "8934342432")); //"73283718237146153655864"
