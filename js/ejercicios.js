@@ -271,11 +271,7 @@ const duracionParaHumanos = (segundos) => {
 };
 
 const checkSandCero = (num) => {
-  let sString = "";
-  if (num > 1) {
-    sString = "s";
-  }
-  return sString;
+  return num > 1 ? "s" : "";
 };
 
 console.log(duracionParaHumanos(0));

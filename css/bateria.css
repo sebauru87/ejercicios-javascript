@@ -1,3 +1,8 @@
+h1 {
+  text-align: center;
+  margin: 2rem;
+}
+
 .row button {
   font-size: 3rem;
   border-radius: 0.3rem;
@@ -11,6 +16,10 @@
 #kick img {
   width: 14rem;
   height: 14rem;
+}
+
+#snare {
+  height: fit-content;
 }
 
 #modal {
@@ -46,4 +55,8 @@
   width: 70%;
   padding: 1rem;
   border-radius: 5px;
+}
+
+#btnModal {
+  margin-top: 4rem;
 }

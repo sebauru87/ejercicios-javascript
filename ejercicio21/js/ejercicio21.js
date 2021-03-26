@@ -29,7 +29,7 @@ const mostrarTodosUsuarios = (usuarios) => {
 
 const mostrarUnUsuario = (usuario) => {
   tabla.innerHTML += `<tr>
-  <th>${usuario.id}</th>
+  <td>${usuario.id}</td>
   <td>${usuario.firstname}</td>
   <td>${usuario.lastname}</td>
   <td>${usuario.age}</td>
