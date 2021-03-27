@@ -64,30 +64,26 @@ document.addEventListener("keydown", (event) => {
 const modal = document.getElementById("modal");
 const btn = document.getElementById("btnModal");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
 btn.onclick = function () {
   modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
 };
 
-// When the user clicks on <span> (x), close the modal
-// span.onclick = function () {
-//   modal.style.display = "none";
-// };
 const btnModalCancelar = document.getElementById("btnModalCancelar");
 const btnModalAceptar = document.getElementById("btnModalAceptar");
 btnModalCancelar.onclick = function () {
   modal.style.display = "none";
+  document.body.style.overflow = "auto";
 };
 btnModalAceptar.onclick = function () {
   modal.style.display = "none";
+  document.body.style.overflow = "auto";
 };
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    document.body.style.overflow = "auto";
   }
 };
